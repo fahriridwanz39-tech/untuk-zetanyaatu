@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Untuk Alzena Fausta Azalia 💕</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,7 +17,6 @@
     position: relative;
   }
 
-  /* Hati jatuh */
   .hearts-bg {
     position: fixed;
     inset: 0;
@@ -47,7 +46,7 @@
     text-align: center;
   }
 
-  /* Amplop / pembuka */
+  /* ============ PEMBUKA ============ */
   .opening {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
@@ -90,7 +89,6 @@
     font-size: 1.3rem;
     color: #8a3a52;
     margin-bottom: 25px;
-    font-weight: 400;
     font-family: 'Dancing Script', cursive;
   }
 
@@ -124,11 +122,10 @@
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(214, 51, 108, 0.55);
   }
-  .btn:active { transform: translateY(0); }
 
-  /* Konten utama */
-  .content { display: none; }
-  .content.show { display: block; animation: fadeInUp 1s ease; }
+  /* ============ SLIDE SYSTEM ============ */
+  .slide { display: none; }
+  .slide.active { display: block; animation: fadeInUp 0.8s ease; }
 
   .card {
     background: rgba(255, 255, 255, 0.92);
@@ -211,7 +208,6 @@
     top: 14px;
   }
 
-  /* Baris sastra */
   .puisi {
     font-family: 'Dancing Script', cursive;
     font-size: 1.45rem;
@@ -221,7 +217,7 @@
     margin: 15px 0;
   }
 
-  /* ====== GALERI FOTO POLAROID ====== */
+  /* ============ POLAROID (Slide 2) ============ */
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -242,9 +238,7 @@
     cursor: pointer;
   }
 
-  .polaroid:nth-child(even) {
-    transform: rotate(2deg);
-  }
+  .polaroid:nth-child(even) { transform: rotate(2deg); }
 
   .polaroid:hover {
     transform: rotate(0deg) scale(1.05);
@@ -285,7 +279,388 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   }
 
-  /* Lightbox */
+  /* =========================================
+     🎀 SLIDE 3 — MADING HELLO KITTY 🎀
+     ========================================= */
+
+  .kitty-slide {
+    background:
+      radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.4), transparent 30%),
+      radial-gradient(circle at 90% 80%, rgba(255, 105, 180, 0.3), transparent 30%),
+      linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 50%, #ffc0cb 100%);
+    border-radius: 30px;
+    padding: 35px 22px;
+    border: 4px dashed #ff69b4;
+    box-shadow: 0 20px 60px rgba(255, 105, 148, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kitty-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 105, 180, 0.15) 2px, transparent 2px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .kitty-slide .corner-bow {
+    position: absolute;
+    font-size: 30px;
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .kitty-slide .corner-bow.tl { top: 15px; left: 15px; transform: rotate(-20deg); }
+  .kitty-slide .corner-bow.tr { top: 15px; right: 15px; transform: rotate(20deg); }
+  .kitty-slide .corner-bow.bl { bottom: 15px; left: 15px; transform: rotate(20deg); }
+  .kitty-slide .corner-bow.br { bottom: 15px; right: 15px; transform: rotate(-20deg); }
+
+  /* Header Kitty */
+  .kitty-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
+  }
+
+  .kitty-face {
+    width: 110px;
+    height: 92px;
+    margin: 0 auto 15px;
+    position: relative;
+    background: #fff;
+    border-radius: 50% 50% 45% 45%;
+    box-shadow: inset -5px -5px 0 rgba(255, 182, 193, 0.3), 0 5px 15px rgba(214, 51, 108, 0.2);
+  }
+
+  .kitty-face::before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    top: 37px;
+    left: 28px;
+    box-shadow: 45px 0 0 #000;
+  }
+
+  .kitty-face::after {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 9px;
+    background: #ffcc00;
+    border-radius: 50%;
+    top: 53px;
+    left: 49px;
+  }
+
+  .kitty-bow {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    width: 42px;
+    height: 28px;
+    z-index: 2;
+  }
+
+  .kitty-bow::before,
+  .kitty-bow::after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 23px;
+    background: #ff3366;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 5px;
+  }
+
+  .kitty-bow::before { left: 0; transform: rotate(-20deg); }
+  .kitty-bow::after { right: 0; transform: rotate(20deg); }
+
+  .kitty-bow-center {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: #cc0033;
+    border-radius: 50%;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .kitty-whiskers {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    right: 0;
+    height: 1px;
+  }
+
+  .kitty-whiskers::before,
+  .kitty-whiskers::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #000;
+    border-radius: 2px;
+    top: 0;
+  }
+
+  .kitty-whiskers::before {
+    left: -14px;
+    box-shadow: 0 8px 0 #000, 0 -8px 0 #000;
+  }
+
+  .kitty-whiskers::after {
+    right: -14px;
+    box-shadow: 0 8px 0 #000, 0 -8px 0 #000;
+  }
+
+  .kitty-header h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff1493;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 0 rgba(255, 182, 193, 0.6);
+  }
+
+  .kitty-header p {
+    color: #8a3a52;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ====== Papan Mading ====== */
+  .mading-board {
+    position: relative;
+    z-index: 1;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.4) 0px,
+        rgba(255, 255, 255, 0.4) 2px,
+        transparent 2px,
+        transparent 20px
+      ),
+      linear-gradient(135deg, #fff5f8, #ffe4ec);
+    border-radius: 25px;
+    padding: 45px 25px 35px;
+    border: 6px solid #ffb6c1;
+    box-shadow:
+      inset 0 0 30px rgba(255, 105, 180, 0.15),
+      0 12px 30px rgba(255, 105, 180, 0.3);
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .mading-board::before,
+  .mading-board::after {
+    content: '📌';
+    position: absolute;
+    font-size: 26px;
+    z-index: 3;
+  }
+  .mading-board::before { top: 10px; left: 10px; transform: rotate(-20deg); }
+  .mading-board::after { top: 10px; right: 10px; transform: rotate(20deg); }
+
+  .mading-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: #ff1493;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 rgba(255, 182, 193, 0.6);
+    position: relative;
+    z-index: 2;
+  }
+
+  .mading-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mading-photo {
+    position: relative;
+    background: #fff;
+    padding: 10px 10px 38px;
+    box-shadow: 0 8px 20px rgba(214, 51, 108, 0.35);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 3px;
+  }
+
+  .mading-photo:nth-child(1) {
+    grid-column: 1 / 4;
+    transform: rotate(-3deg);
+    background: #fff0f5;
+  }
+  .mading-photo:nth-child(2) {
+    grid-column: 4 / 7;
+    transform: rotate(2.5deg);
+    background: #ffe4ec;
+  }
+  .mading-photo:nth-child(3) {
+    grid-column: 1 / 3;
+    transform: rotate(2deg);
+    background: #fff0f5;
+  }
+  .mading-photo:nth-child(4) {
+    grid-column: 3 / 5;
+    transform: rotate(-2.5deg);
+    background: #ffe4ec;
+  }
+  .mading-photo:nth-child(5) {
+    grid-column: 5 / 7;
+    transform: rotate(3deg);
+    background: #fff0f5;
+  }
+
+  .mading-photo:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.5);
+    z-index: 10;
+  }
+
+  .mading-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    object-fit: cover;
+    background: #ffe4ec;
+  }
+
+  .mading-photo:nth-child(1) img,
+  .mading-photo:nth-child(2) img {
+    height: 220px;
+  }
+
+  .mading-photo:nth-child(3) img,
+  .mading-photo:nth-child(4) img,
+  .mading-photo:nth-child(5) img {
+    height: 200px;
+  }
+
+  .mading-photo::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 70px;
+    height: 20px;
+    background: rgba(255, 214, 224, 0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    z-index: 3;
+  }
+
+  .mading-photo:nth-child(1)::before {
+    background: rgba(255, 182, 193, 0.85);
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  .mading-photo:nth-child(2)::before {
+    background: rgba(255, 105, 180, 0.55);
+    transform: translateX(-50%) rotate(4deg);
+  }
+  .mading-photo:nth-child(3)::before {
+    background: rgba(255, 214, 224, 0.9);
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  .mading-photo:nth-child(4)::before {
+    background: rgba(255, 182, 193, 0.85);
+    transform: translateX(-50%) rotate(5deg);
+  }
+  .mading-photo:nth-child(5)::before {
+    background: rgba(255, 105, 180, 0.55);
+    transform: translateX(-50%) rotate(-4deg);
+  }
+
+  .mading-photo .caption {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: #d6336c;
+    padding: 0 10px;
+    line-height: 1.2;
+  }
+
+  /* ====== SASTRA ====== */
+  .kitty-sastra {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 22px;
+    padding: 40px 30px;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25);
+    margin-bottom: 20px;
+  }
+
+  .kitty-sastra h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4rem;
+    color: #ff1493;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 0 rgba(255, 182, 193, 0.6);
+  }
+
+  .kitty-sastra .bait {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.55rem;
+    color: #ff1493;
+    line-height: 1.9;
+    text-align: center;
+    margin: 25px 0;
+    padding: 22px 18px;
+    background: linear-gradient(135deg, rgba(255, 228, 236, 0.8), rgba(255, 209, 220, 0.8));
+    border-radius: 18px;
+    border-left: 5px solid #ff69b4;
+    border-right: 5px solid #ff69b4;
+  }
+
+  .kitty-sastra .prosa {
+    font-size: 1.03rem;
+    line-height: 2.05;
+    color: #5a2436;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .kitty-sastra .prosa:last-child { margin-bottom: 0; }
+
+  .kitty-sastra .penutup {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.9rem;
+    color: #ff1493;
+    text-align: center;
+    margin-top: 28px;
+    line-height: 1.5;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffe4ec, #ffd1dc);
+    border-radius: 18px;
+    border: 2px dashed #ff69b4;
+  }
+
+  /* ============ LIGHTBOX ============ */
   .lightbox {
     display: none;
     position: fixed;
@@ -316,7 +691,6 @@
     font-size: 2.5rem;
     cursor: pointer;
     line-height: 1;
-    font-weight: 300;
   }
 
   .footer-love {
@@ -326,7 +700,6 @@
     text-align: center;
     margin-top: 30px;
     line-height: 1.6;
-    padding: 0 10px;
   }
 
   .signature {
@@ -346,7 +719,30 @@
     font-weight: 700;
   }
 
-  /* Tombol musik */
+  .nav-btn {
+    background: linear-gradient(135deg, #ff4d79, #d6336c);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(214, 51, 108, 0.4);
+    transition: all 0.3s;
+    margin: 10px 6px 0;
+  }
+  .nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(214, 51, 108, 0.55);
+  }
+  .nav-btn.ghost {
+    background: rgba(255, 255, 255, 0.9);
+    color: #d6336c;
+    border: 2px solid #d6336c;
+  }
+
   .music-btn {
     position: fixed;
     bottom: 25px;
@@ -364,13 +760,23 @@
   }
   .music-btn:hover { transform: scale(1.1); }
 
-  /* Divider manis */
   .divider {
     text-align: center;
     font-size: 1.5rem;
     color: #d6336c;
     margin: 10px 0 20px;
     letter-spacing: 8px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 700px) {
+    .mading-grid { grid-template-columns: repeat(2, 1fr); }
+    .mading-photo:nth-child(1) { grid-column: span 2; transform: rotate(-2deg); }
+    .mading-photo:nth-child(2) { grid-column: span 2; transform: rotate(2deg); }
+    .mading-photo:nth-child(3) { grid-column: span 1; transform: rotate(2deg); }
+    .mading-photo:nth-child(4) { grid-column: span 1; transform: rotate(-2deg); }
+    .mading-photo:nth-child(5) { grid-column: span 2; transform: rotate(1.5deg); }
+    .mading-photo img { height: 200px !important; }
   }
 
   @media (max-width: 600px) {
@@ -383,20 +789,31 @@
     .name-mention { font-size: 1.2rem; }
     .subtitle { font-size: 1.15rem; }
     .puisi { font-size: 1.2rem; }
+    .nav-btn { padding: 12px 24px; font-size: 0.95rem; }
     .polaroid img { height: 320px; }
     .polaroid { max-width: 280px; }
-    .polaroid .caption { font-size: 1.15rem; }
+
+    .kitty-slide { padding: 25px 12px; }
+    .kitty-header h2 { font-size: 1.9rem; }
+    .kitty-face { width: 90px; height: 75px; }
+    .kitty-face::before { width: 7px; height: 10px; top: 30px; left: 22px; box-shadow: 38px 0 0 #000; }
+    .kitty-face::after { width: 11px; height: 8px; top: 43px; left: 40px; }
+    .mading-board { padding: 35px 15px 25px; }
+    .mading-title { font-size: 1.7rem; }
+    .kitty-sastra { padding: 28px 20px; }
+    .kitty-sastra h3 { font-size: 1.85rem; }
+    .kitty-sastra .bait { font-size: 1.25rem; padding: 18px 12px; }
+    .kitty-sastra .penutup { font-size: 1.45rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- Hati jatuh di background -->
 <div class="hearts-bg" id="heartsBg"></div>
 
 <div class="container">
 
-  <!-- Pembuka -->
+  <!-- PEMBUKA -->
   <div class="opening" id="opening">
     <div class="envelope" onclick="bukaSurat()">💌</div>
     <div class="name-badge">KHUSUS UNTUK KAMU</div>
@@ -405,46 +822,21 @@
     <button class="btn" onclick="bukaSurat()">Buka Pesan 💕</button>
   </div>
 
-  <!-- Isi Pesan -->
-  <div class="content" id="content">
+  <!-- ================== SLIDE 1 — SURAT ================== -->
+  <div class="slide" id="slide1">
 
     <div class="card">
       <h2>Hai, Zeta 🌸</h2>
+      <p>Aku nggak tahu mau ngomong apa, tapi aku mau ngungkapin ini setiap hari.</p>
       <p>
-        Aku nggak tahu mau ngomong apa, tapi aku mau ngungkapin ini setiap hari.
-      </p>
-      <p>
-        <span class="highlight">Aku sayang sama kamu.</span>
-        <br>
-        <span class="highlight">Aku cinta sama kamu.</span>
-        <br>
+        <span class="highlight">Aku sayang sama kamu.</span><br>
+        <span class="highlight">Aku cinta sama kamu.</span><br>
         <span class="highlight">Aku kangen banget sama kamu.</span>
       </p>
       <p>
         Itu aja. Simpel. Tulus. Nggak ada yang aku sembunyiin lagi.
         Alzena Fausta Azalia, kamu harus tahu itu.
       </p>
-    </div>
-
-    <!-- ========== GALERI FOTO ========== -->
-    <div class="card">
-      <h2>Kamu di Setiap Sudut Pandangku 📸</h2>
-      <p style="text-align:center; margin-bottom: 10px; color: #8a3a52;">
-        Setiap foto kamu, aku simpan baik-baik. Karena buat aku, kamu
-        bukan cuma cantik di satu sisi — kamu indah dari mana pun aku lihat.
-      </p>
-      <div class="gallery">
-        <div class="polaroid" onclick="openLightbox('z 1.jpg')">
-          <div class="tape"></div>
-          <img src="z 1.jpg" alt="Zeta 1" onerror="this.style.background='#ffe0ec'; this.alt='Ganti src dengan foto kamu';">
-          <div class="caption">Cantik dari setiap sisi 💗</div>
-        </div>
-        <div class="polaroid" onclick="openLightbox('z 2.jpg')">
-          <div class="tape"></div>
-          <img src="z 2.jpg" alt="Zeta 2" onerror="this.style.background='#ffe0ec'; this.alt='Ganti src dengan foto kamu';">
-          <div class="caption">Senyum manis itu, candu 💕</div>
-        </div>
-      </div>
     </div>
 
     <div class="card">
@@ -462,7 +854,6 @@
       </p>
     </div>
 
-    <!-- ========== BAGIAN ENGLISH + SASTRA ========== -->
     <div class="card">
       <h2>I Am In Love With You 🤍</h2>
       <p>
@@ -484,13 +875,10 @@
         not through hints — but straight from me. 🤍
       </p>
     </div>
-    <!-- ========== SELESAI BAGIAN ENGLISH ========== -->
 
     <div class="card">
       <h2>Aku Kangen Banget Sama Kamu 🥺</h2>
-      <p>
-        Zeta, <span class="highlight">aku kangen banget sama kamu</span>.
-      </p>
+      <p>Zeta, <span class="highlight">aku kangen banget sama kamu</span>.</p>
       <div class="puisi">
         Rindu ini bukan yang diam-diam menyapa,<br>
         ia mengetuk tiap malam, menghitung tiap jeda —<br>
@@ -504,174 +892,4 @@
         Aku kangen kamu — <span class="highlight">kangen banget</span>.
         Nggak ada obatnya selain kamu.
       </p>
-      <p>
-        Jadi ya, aku ngomong aja: <b>aku kangen kamu, Zeta.</b> Beneran.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Hal-Hal Tentang Kamu 🍯</h2>
-      <ul class="reasons">
-        <li>Nama kamu, <b>Alzena Fausta Azalia</b>, tiap aku sebut rasanya hangat.</li>
-        <li>Kamu itu kayak lagu favorit — nggak pernah bosen aku dengerin.</li>
-        <li>Aku sayang kamu bukan karena alasan, tapi karena kamu kamu.</li>
-        <li>Kamu nggak harus sempurna, karena buat aku kamu udah lebih dari cukup.</li>
-        <li>Kalau aku lagi capek, cuma mikirin kamu aja udah bikin aku senyum lagi.</li>
-        <li>Zeta, kamu itu berharga. Dan aku pengen kamu tahu itu dari aku.</li>
-      </ul>
-    </div>
-
-    <div class="card center-text">
-      <div class="divider">💗 💗 💗</div>
-      <div class="big-love">I Love You, Alzena 💕</div>
-      <p>
-        Aku nggak minta kamu langsung balas.
-        <br>
-        Aku cuma pengen kamu tahu — <span class="highlight">aku sayang kamu,
-        aku cinta kamu, aku kangen kamu.</span>
-        <br><br>
-        Itu aja. Dan aku nggak akan nyesel ngomong ini ke kamu.
-      </p>
-    </div>
-
-    <div class="card center-text">
-      <h2>Buat Kamu, Zeta 💌</h2>
-      <p>
-        Apa pun yang terjadi nanti, aku pengen kamu inget satu hal:
-        <br><br>
-        <span class="highlight">Ada aku yang sayang sama kamu.</span>
-      </p>
-      <div class="puisi">
-        Bukan kasih yang tersimpan dalam sunyi,<br>
-        bukan pula rindu yang hanya dipandang dari kejauhan —<br>
-        melainkan cinta yang terucap dengan berani,<br>
-        di depan cahaya, tanpa tabir, tanpa sembunyian.
-      </div>
-      <p>
-        <br>
-        <span class="name-mention">Alzena Fausta Azalia</span>,
-        aku sayang kamu, aku cinta kamu, dan aku kangen kamu.
-        Semoga kamu bahagia. 🤍
-      </p>
-    </div>
-
-    <div class="footer-love">
-      "Alzena Fausta Azalia,<br>
-      aku sayang kamu.<br>
-      aku cinta kamu.<br>
-      aku kangen kamu." 💗
-    </div>
-
-    <div class="signature">
-      Dari aku,<br>
-      yang sayang kamu terang-terangan,<br>
-      <span class="big-name">— Aku 💕</span>
-    </div>
-
-    <div style="text-align:center; margin-top: 40px;">
-      <button class="btn" onclick="balikKeAwal()">Baca Lagi 🔄</button>
-    </div>
-  </div>
-</div>
-
-<!-- Lightbox untuk zoom foto -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="close-btn">&times;</span>
-  <img id="lightboxImg" src="" alt="Zoom">
-</div>
-
-<!-- Tombol musik -->
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵</button>
-
-<!-- Audio: musik romantis -->
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9a6e0b2c9e.mp3?filename=romantic-piano-112713.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  // Generate hati jatuh
-  const heartsBg = document.getElementById('heartsBg');
-  const heartsEmoji = ['💖','💕','💗','💓','💞','🌸','✨','🤍'];
-  for (let i = 0; i < 28; i++) {
-    const h = document.createElement('div');
-    h.className = 'heart-fall';
-    h.textContent = heartsEmoji[Math.floor(Math.random() * heartsEmoji.length)];
-    h.style.left = Math.random() * 100 + '%';
-    h.style.fontSize = (Math.random() * 20 + 14) + 'px';
-    h.style.animationDuration = (Math.random() * 6 + 6) + 's';
-    h.style.animationDelay = (Math.random() * 8) + 's';
-    heartsBg.appendChild(h);
-  }
-
-  // Buka surat
-  function bukaSurat() {
-    document.getElementById('opening').style.display = 'none';
-    document.getElementById('content').classList.add('show');
-    playMusic();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function balikKeAwal() {
-    document.getElementById('opening').style.display = 'block';
-    document.getElementById('content').classList.remove('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Lightbox
-  function openLightbox(src) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightbox').classList.add('show');
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('show');
-  }
-
-  // Musik
-  const music = document.getElementById('bgMusic');
-  const musicBtn = document.getElementById('musicBtn');
-  let isPlaying = false;
-
-  function playMusic() {
-    music.volume = 0.4;
-    music.play().then(() => {
-      isPlaying = true;
-      musicBtn.textContent = '🔊';
-    }).catch(() => {
-      isPlaying = false;
-      musicBtn.textContent = '🎵';
-    });
-  }
-
-  function toggleMusic() {
-    if (isPlaying) {
-      music.pause();
-      musicBtn.textContent = '🔇';
-      isPlaying = false;
-    } else {
-      playMusic();
-    }
-  }
-
-  // Efek klik hati
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('.polaroid') || e.target.closest('.lightbox')) return;
-    const heart = document.createElement('div');
-    heart.textContent = '💖';
-    heart.style.position = 'fixed';
-    heart.style.left = e.clientX + 'px';
-    heart.style.top = e.clientY + 'px';
-    heart.style.fontSize = '24px';
-    heart.style.pointerEvents = 'none';
-    heart.style.zIndex = '999';
-    heart.style.transition = 'all 1s ease';
-    document.body.appendChild(heart);
-    setTimeout(() => {
-      heart.style.transform = 'translateY(-80px) scale(0)';
-      heart.style.opacity = '0';
-    }, 50);
-    setTimeout(() => heart.remove(), 1100);
-  });
-</script>
-
-</body>
-</html>
+      <p>Jadi ya,
